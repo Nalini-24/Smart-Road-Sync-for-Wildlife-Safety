@@ -257,3 +257,7 @@ I implemented YOLOv3-Tiny, a lightweight version of the YOLO object detection sy
 5. **Real-world Application**: While this project serves as a proof of concept, deploying such a system in actual self-driving cars would require extensive testing, optimization, and integration with other vehicular systems.
 
 Despite these limitations, this project demonstrates the potential of combining object detection and classification for specific use cases like animal detection on roads, providing a foundation for further development and optimization.
+## Credits
+This project is based on [Animal-Recognition-App-for-Self-Driving-Cars](https://github.com/Silvano315/Animal-Recognition-App-for-Self-Driving-Cars)
+by [silvano315], modified by [Nalini-24].
+
