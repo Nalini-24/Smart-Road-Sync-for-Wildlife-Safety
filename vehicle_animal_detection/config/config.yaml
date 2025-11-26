@@ -1,6 +1,6 @@
 models:
   yolo_tiny:
-    weights: 'models/yolo_tiny/yolov3-tiny.weights'
+    weights: 'models/yolo_tiny/yolov3-tiny .weights'
     config: 'models/yolo_tiny/yolov3-tiny.cfg'
     classes: 'models/yolo_tiny/coco.names'
     confidence_threshold: 0.3
@@ -22,3 +22,7 @@ performance:
   frame_skip: 2
   target_resolution: [416, 416]
   batch_size: 1
+serial:
+  port: "COM6"       # Update to your Arduino port
+  baudrate: 9600
+  enabled: true
