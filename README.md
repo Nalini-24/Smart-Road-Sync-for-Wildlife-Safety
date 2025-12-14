@@ -46,8 +46,8 @@ Animal-Recognition-App-for-Self-Driving-Cars/
 │
 ├── assets/
 │ └── images/
-│ ├── gui_animal_detected.png
-│ └── arduino_lcd_animal.jpg
+│ ├── elephant.png
+│ └── Animal_detected_elephant.jpg
 │
 ├── requirements.txt
 ├── README.md
