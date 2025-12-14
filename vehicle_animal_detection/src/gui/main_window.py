@@ -80,7 +80,7 @@ class ProcessingThread(QThread):
         self.config = config
         self.video_path = video_path
         self.config_path = config_path
-        self.classifier = Classifier(self.config_path)
+        #self.classifier = Classifier(self.config_path)
         self.detection_smoother = DetectionSmoother()
 
         self.last_state = None
@@ -151,20 +151,18 @@ class ProcessingThread(QThread):
                 if x2 <= x1 or y2 <= y1:
                     continue
 
-                object_img = frame[y1:y2, x1:x2]
-                result = None
-                try:
-                    result = self.classifier.classify(object_img)
-                except Exception as e:
-                    print(f"Classification error: {e}")
+                # YOLO already gives class → no classifier needed
+                detected = True
+                species = detection['class'].upper()
 
-                if result:
-                    detected = True
-                    species = detection['class'].upper()
-                    label = f"{species} ({result['confidence']:.2f})"
-                    cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
-                    cv2.putText(frame, label, (x1, y1 - 10),
-                                cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+                # Draw bounding box & label (confidence directly from YOLO)
+                label = f"{species}"
+                cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+                cv2.putText(frame, label, (x1, y1 - 10),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+                break  # only use first detection
+
+   
 
             # --------------- UPDATED SERIAL LOGIC (LCD SAFE) ---------------
             # ---------------------- RELIABLE SERIAL LOGIC ----------------------
@@ -179,10 +177,13 @@ class ProcessingThread(QThread):
 
             # Always send message if different OR if enough time passed
             current_time = time.time()
-            if msg != self.last_state or (current_time - getattr(self, 'last_send_time', 0) > 0.5):
+
+            # Send only if changed AND at least 1 second passed
+            # Send ONLY when YOLO state changes
+            if msg != self.last_state:
                 self.send_alert(msg)
                 self.last_state = msg
-                self.last_send_time = current_time
+
             # --------------------------------------------------------------
 
             processed_frames.append(frame)
