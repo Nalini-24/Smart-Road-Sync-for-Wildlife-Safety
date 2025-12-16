@@ -84,12 +84,12 @@ Animal-Recognition-App-for-Self-Driving-Cars/
 ### Step 1: Clone the Repository
 ```bash
 git clone <your-repository-url>
-cd Animal-Recognition-App-for-Self-Driving-Cars
+cd Smart-Road-Sync-for-Wildlife-Safety
 
-Step 2: Install Dependencies
+###Step 2: Install Dependencies
 pip install -r requirements.txt
 
-Step 3: Arduino Setup
+###Step 3: Arduino Setup
 --Open arduino/lcd_animal_display.ino in Arduino IDE
 
 --Connect Arduino Uno via USB
@@ -100,10 +100,10 @@ Step 3: Arduino Setup
 
 --Note the COM port and update it in config.yaml
 
-Step 4: Run the Application
+###Step 4: Run the Application
 python -m vehicle_animal_detection.src.gui.main_window
 
-Step 5: Use the System
+###Step 5: Use the System
 --Click Upload Video
 
 --Select a road video file
@@ -118,7 +118,7 @@ Step 5: Use the System
 
 ---
 
-###8. Key Features
+##8. Key Features
 
 1.Real-time animal detection from video input
 
@@ -132,7 +132,7 @@ Step 5: Use the System
 
 ---
 
-###9. Limitations
+##9. Limitations
 
 1.Uses pre-recorded video instead of live camera feed
 
@@ -142,7 +142,7 @@ Step 5: Use the System
 
 ---
 
-###10. Future Enhancements
+##10. Future Enhancements
 
 1.Live roadside camera integration
 
@@ -156,6 +156,6 @@ Step 5: Use the System
 
 ---
 
-###11. Conclusion
+##11. Conclusion
 
 Smart Road Sync for Wildlife Safety demonstrates how machine learning and embedded systems can be combined to address real-world safety challenges. The project highlights the potential of AI-driven solutions in reducing wildlife–vehicle collisions and improving road safety.
