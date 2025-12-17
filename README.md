@@ -21,6 +21,35 @@ This project proposes a **smart, automated detection system** that dynamically d
 4. Detection results are sent via serial communication
 5. Arduino displays alerts on an LCD screen
 
+
+*** YOLOv3-Tiny Object Detection ***
+
+This project uses the **YOLOv3-Tiny** (You Only Look Once) object detection model to identify animals in road scenes.
+
+YOLO is a single-stage detector that performs **object localization and classification in one forward pass**, making it suitable for real-time and near–real-time applications.
+
+### Why YOLOv3-Tiny?
+- Faster inference compared to full YOLOv3
+- Lightweight architecture with fewer convolutional layers
+- Suitable for systems with limited computational resources
+- Well-suited for embedded and roadside safety applications
+
+### Detection Pipeline
+1. Input video frames are resized to a fixed resolution
+2. Each frame is passed through the YOLOv3-Tiny network
+3. Bounding boxes and class probabilities are predicted
+4. Non-Maximum Suppression (NMS) removes duplicate detections
+5. Detected animal class names are displayed in the GUI
+6. Detection results are sent to Arduino via serial communication
+
+### Model Details
+- **Model**: YOLOv3-Tiny
+- **Dataset**: Pre-trained on COCO dataset
+- **Detection Classes Used**: Animals such as dog, cow, horse, elephant, etc.
+- **Framework**: OpenCV DNN module
+
+This approach enables efficient and reliable animal detection while maintaining low latency, making it suitable for smart road safety systems.
+
 ---
 
 ## 4. Project Structure
