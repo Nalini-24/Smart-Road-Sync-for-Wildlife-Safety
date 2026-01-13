@@ -1,6 +1,6 @@
 import serial
 import time
-from .classification import Classifier
+#from .classification import Classifier
 from .gui import MainWindow
 
 class ArduinoHandler:

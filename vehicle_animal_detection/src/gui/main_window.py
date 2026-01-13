@@ -12,7 +12,7 @@ from PyQt5.QtCore import Qt, QThread, pyqtSignal
 from PyQt5.QtGui import QImage, QPixmap
 
 from ..detection.yolo_detector import detect
-from ..classification.classifier import Classifier
+#from ..classification.classifier import Classifier
 
 # Try to import pyserial gracefully
 try:
