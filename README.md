@@ -72,6 +72,7 @@ Animal-Recognition-App-for-Self-Driving-Cars/
 │
 ├── arduino/
 │ └── lcd_animal_display.ino
+| |__ arduino board connections.png
 │
 ├── assets/
 │ └── images/
@@ -120,6 +121,8 @@ pip install -r requirements.txt
 
 ###Step 3: Arduino Setup
 --Open arduino/lcd_animal_display.ino in Arduino IDE
+
+--Set Up Arduino Uno connections via the given circuit diagram
 
 --Connect Arduino Uno via USB
 
